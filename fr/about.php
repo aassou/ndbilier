@@ -1,12 +1,3 @@
-<?php
-    session_start();
-    if ( isset($_GET['lang']) ) {
-        $_SESSION['lang'] = $_GET['lang'];
-    }
-    else if ( !isset($_GET['lang']) and !isset($_SESSION['lang']) ){
-        $_SESSION['lang'] = "ar";    
-    }
-?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -15,13 +6,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
-        <link href="css/bootstrap.css" rel="stylesheet" media="screen">
-        <link href="css/bootstrap-responsive.css" rel="stylesheet" media="screen">
-        <link href="css/flexslider/flexslider.css" rel="stylesheet" media="screen">
-        <link href="css/tabber/tabber.css" rel="stylesheet" media="screen">
-        <link href="css/iconmoon/iconfont.css" rel="stylesheet" media="screen">
-        <link href="css/styles.css" rel="stylesheet" media="screen">
-        <link href="css/responsive.css" rel="stylesheet" media="screen">
+        <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
+        <link href="../css/bootstrap-responsive.css" rel="stylesheet" media="screen">
+        <link href="../css/flexslider/flexslider.css" rel="stylesheet" media="screen">
+        <link href="../css/tabber/tabber.css" rel="stylesheet" media="screen">
+        <link href="../css/iconmoon/iconfont.css" rel="stylesheet" media="screen">
+        <link href="../css/styles.css" rel="stylesheet" media="screen">
+        <link href="../css/responsive.css" rel="stylesheet" media="screen">
         <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Raleway:400,700,100,200,300' rel='stylesheet' type='text/css'>
         <!--[if lt Ie 9]> <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -38,7 +29,7 @@
                             <div class="welcome">
                                 <div class="row">
                                     <div class="span6">
-                                        <div class="picct"> <img src="img/imgdemo/430x230.gif" alt=""> </div>
+                                        <div class="picct"> <img src="../img/imgdemo/430x230.gif" alt=""> </div>
                                     </div>
                                     <div class="span6">
                                         <div class="textct">
@@ -173,11 +164,11 @@
         <!-- footer begin -->
         <?php include('include/footer.php'); ?>
         <!-- footer end -->
-        <script src="js/jquery-1.8.3.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/tinynav/tinynav.js" type="text/javascript"></script>
-        <script type="text/javascript" src="js/tabber/tabber.js"></script>
-        <script type="text/javascript" src="js/main.js"></script>
+        <script src="../js/jquery-1.8.3.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/tinynav/tinynav.js" type="text/javascript"></script>
+        <script type="text/javascript" src="../js/tabber/tabber.js"></script>
+        <script type="text/javascript" src="../js/main.js"></script>
         <script type="text/javascript">
             /*<![CDATA[ */
             jQuery(function() {

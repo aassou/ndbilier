@@ -258,3 +258,7 @@ header .slider-home .flexslider:hover .flex-prev{opacity:0.8;left:5px;}header .s
 .img-height-big{
 	height: 420px;
 }
+.products-images{
+	width: 300px;
+	height: 180px;
+}

@@ -10,7 +10,13 @@
     }
     spl_autoload_register("classLoad");
     //classes loading end
-    //session_start();
+    session_start();
+    if ( isset($_GET['lang']) ) {
+        $_SESSION['lang'] = $_GET['lang'];
+    }
+    else if ( !isset($_GET['lang']) and !isset($_SESSION['lang']) ){
+        $_SESSION['lang'] = "ar";    
+    }
     include('include/config.php');
     //class managers
     $companyManager = new CompanyManager($pdo);

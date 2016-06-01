@@ -1,23 +1,17 @@
 <?php
     //classes loading begin
     function classLoad ($myClass) {
-        if(file_exists('admin/model/'.$myClass.'.php')){
-            include('admin/model/'.$myClass.'.php');
+        if(file_exists('../admin/model/'.$myClass.'.php')){
+            include('../admin/model/'.$myClass.'.php');
         }
-        elseif(file_exists('admin/controller/'.$myClass.'.php')){
-            include('admin/controller/'.$myClass.'.php');
+        elseif(file_exists('../admin/controller/'.$myClass.'.php')){
+            include('../admin/controller/'.$myClass.'.php');
         }
     }
     spl_autoload_register("classLoad");
     //classes loading end
-    session_start();
-    if ( isset($_GET['lang']) ) {
-        $_SESSION['lang'] = $_GET['lang'];
-    }
-    else if ( !isset($_GET['lang']) and !isset($_SESSION['lang']) ){
-        $_SESSION['lang'] = "ar";    
-    }
-    include('include/config.php');
+    //session_start();
+    include('../include/config.php');
     //class managers
     $companyManager = new CompanyManager($pdo);
     $companies = $companyManager->getCompanys();
@@ -31,14 +25,14 @@
         <meta name="description" content="">
         <meta name="author" content="">
         <!-- Your styles -->
-        <link href="css/bootstrap.css" rel="stylesheet" media="screen">
-        <link href="css/bootstrap-responsive.css" rel="stylesheet" media="screen">
-        <link href="css/flexslider/flexslider.css" rel="stylesheet" media="screen">
-        <link href="css/tabber/tabber.css" rel="stylesheet" media="screen">
-        <link href="css/colorbox/colorbox.css" rel="stylesheet" media="screen">
-        <link href="css/iconmoon/iconfont.css" rel="stylesheet" media="screen">
-        <link href="css/styles.css" rel="stylesheet" media="screen">
-        <link href="css/responsive.css" rel="stylesheet" media="screen">
+        <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
+        <link href="../css/bootstrap-responsive.css" rel="stylesheet" media="screen">
+        <link href="../css/flexslider/flexslider.css" rel="stylesheet" media="screen">
+        <link href="../css/tabber/tabber.css" rel="stylesheet" media="screen">
+        <link href="../css/colorbox/colorbox.css" rel="stylesheet" media="screen">
+        <link href="../css/iconmoon/iconfont.css" rel="stylesheet" media="screen">
+        <link href="../css/styles.css" rel="stylesheet" media="screen">
+        <link href="../css/responsive.css" rel="stylesheet" media="screen">
         <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Raleway:400,700,100,200,300' rel='stylesheet' type='text/css'>
         <!-- HTML5 shim, for Ie6-8 support of HTML5 elements -->
@@ -96,15 +90,15 @@
         <?php include('include/footer.php') ?>
         <!-- End footer -->
         <!-- Always latest version of jQuery-->
-        <script src="js/jquery-1.8.3.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
+        <script src="../js/jquery-1.8.3.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
         <!-- Some scripts that are used in almost every page -->
-        <script src="js/tinynav/tinynav.js" type="text/javascript"></script>
-        <script type="text/javascript" src="js/tabber/tabber.js"></script>
-        <script src="js/filterable/filterable.js"></script>
-        <script src="js/colorbox/jquery.colorbox.js"></script>
+        <script src="../js/tinynav/tinynav.js" type="text/javascript"></script>
+        <script type="text/javascript" src="../js/tabber/tabber.js"></script>
+        <script src="../js/filterable/filterable.js"></script>
+        <script src="../js/colorbox/jquery.colorbox.js"></script>
         <!-- Load template main javascript file -->
-        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="../js/main.js"></script>
         <script type="text/javascript">
             /* <![CDATA[ */
             jQuery(function($){

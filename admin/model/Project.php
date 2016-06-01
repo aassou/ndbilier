@@ -4,11 +4,13 @@ class Project{
 	//attributes
 	private $_id;
 	private $_name;
+    private $_nameArabic;
 	private $_titre;
 	private $_adress;
 	private $_size;
 	private $_birthDate;
 	private $_description;
+    private $_descriptionArabic;
 	private $_status;
 	private $_construction;
 	private $_finition;
@@ -38,9 +40,14 @@ class Project{
 	public function setId($id){
     	$this->_id = $id;
     }
+    
 	public function setName($name){
 		$this->_name = $name;
    	}
+
+    public function setNameArabic($nameArabic){
+        $this->_nameArabic = $nameArabic;
+    }
 
 	public function setTitre($titre){
 		$this->_titre = $titre;
@@ -61,6 +68,10 @@ class Project{
 	public function setDescription($description){
 		$this->_description = $description;
    	}
+    
+    public function setDescriptionArabic($descriptionArabic){
+        $this->_descriptionArabic = $descriptionArabic;
+    }
 
 	public function setStatus($status){
 		$this->_status = $status;
@@ -98,9 +109,14 @@ class Project{
 	public function id(){
     	return $this->_id;
     }
+	
 	public function name(){
 		return $this->_name;
    	}
+    
+    public function nameArabic(){
+        return $this->_nameArabic;
+    }
 
 	public function titre(){
 		return $this->_titre;
@@ -121,6 +137,10 @@ class Project{
 	public function description(){
 		return $this->_description;
    	}
+    
+    public function descriptionArabic(){
+        return $this->_descriptionArabic;
+    }
 
 	public function status(){
 		return $this->_status;
