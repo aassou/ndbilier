@@ -74,19 +74,19 @@
                             <a href="<?php //$langLink ?>"><img src="<?= $langIcon ?>" alt="<?= $langAlt ?>" />&nbsp;<?= $langTitle ?></a>
                             <ul class="dropdown-menu">
                                 <?php if ( $_SESSION['lang'] !="ar" ) { ?>
-                                <li><a href="<?= $currentPage ?>?lang=ar"><img src="img/icon/flags/arabic.png" alt="AR" />&nbsp;العربية</a></li>
+                                <li><a href="index.php?lang=ar"><img src="img/icon/flags/arabic.png" alt="AR" />&nbsp;العربية</a></li>
                                 <?php } ?>
                                 <?php if ( $_SESSION['lang'] !="fr" ) { ?>
-                                <li><a href="<?= $currentPage ?>?lang=fr"><img src="img/icon/flags/french.png" alt="FR" />&nbsp;Français</a></li>
+                                <li><a href="index.php?lang=fr"><img src="img/icon/flags/french.png" alt="FR" />&nbsp;Français</a></li>
                                 <?php } ?>
                                 <?php if ( $_SESSION['lang'] !="de" ) { ?>
-                                <li><a href="<?= $currentPage ?>?lang=de"><img src="img/icon/flags/german.png" alt="DE" />&nbsp;Deutschland</a></li>
+                                <li><a href="index.php?lang=de"><img src="img/icon/flags/german.png" alt="DE" />&nbsp;Deutschland</a></li>
                                 <?php } ?>
                                 <?php if ( $_SESSION['lang'] !="nl" ) { ?>
-                                <li><a href="<?= $currentPage ?>?lang=nl"><img src="img/icon/flags/netherlands.png" alt="NL" />&nbsp;Nederland</a></li>
+                                <li><a href="index.php?lang=nl"><img src="img/icon/flags/netherlands.png" alt="NL" />&nbsp;Nederland</a></li>
                                 <?php } ?>
                                 <?php if ( $_SESSION['lang'] !="es" ) { ?>
-                                <li><a href="<?= $currentPage ?>?lang=es"><img src="img/icon/flags/spain.png" alt="ES" />&nbsp;Español</a></li>
+                                <li><a href="index.php?lang=es"><img src="img/icon/flags/spain.png" alt="ES" />&nbsp;Español</a></li>
                                 <?php } ?>
                             </ul>
                             <div class="clearfix"></div>
@@ -106,9 +106,9 @@
         <!-- Banner -->
         <div class="row-fluid">
             <div class="span12">
-                <section class="pic-cat">
-                    <img width="1900" height="200" alt="" src="img/imgdemo/1900x200.gif">
-                </section>
+                <!--section class="pic-cat">
+                    <img width="1900" height="200" alt="" src="img/contact-banner.jpg" />
+                </section-->
             </div>
         </div>
         <!-- End banner -->

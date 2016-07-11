@@ -33,15 +33,15 @@
     $moreButton = "";
     //tests
     if ( $_SESSION['lang'] == "ar" ) {
-        $pageTitle = "عقارات الناظور";
-        $residence = "إقامة";
-        $midPageTitle = "مشاريع جديدة";
-        $moreButton = "المزيد";
+        $pageTitle = "?????? ???????";
+        $residence = "?????";
+        $midPageTitle = "?????? ?????";
+        $moreButton = "??????";
         $projectName = "nameArabic";    
     }
     else if ( $_SESSION['lang'] == "fr" ) {
         $pageTitle = "Immobilier Nador";
-        $residence = "Résidence ";
+        $residence = "R�sidence ";
         $midPageTitle = "Nouveaux Projets";
         $moreButton = "Voir plus";
         $projectName = "name";
@@ -57,7 +57,7 @@
         $pageTitle = "Inmuebles Nador";
         $residence = "Residencia";
         $midPageTitle = "Nuevos Proyectos";
-        $moreButton = "Ver más";
+        $moreButton = "Ver m�s";
         $projectName = "name";
     }
     else if ( $_SESSION['lang'] == "nl" ) {
@@ -119,45 +119,128 @@
                                         </div>
                                     </div>
                                     <div class="span6">
-                                        <div class="container-big">
-                                            <a href="project-detail.php?norebvhksol=<?= uniqid().date('sihdmY') ?>&ahbfncli=<?= $projects[1]->id() ?>&bnufUizekP=<?= date('ihsdmY') ?>">
-                                                <img class="img-height-big" alt="" src="<?= $projectPictureManager->getFirstProjectPictureByIdProject($projects[1]->id())->url() ?>">
-                                            </a>
-                                            <article class="text-big">
-                                                <div class="infotexthv">
-                                                    <h3><a href="project-detail.php?norebvhksol=<?= uniqid().date('sihdmY') ?>&ahbfncli=<?= $projects[1]->id() ?>&bnufUizekP=<?= date('ihsdmY') ?>"> <?= $residence ?> <?= $projects[1]->$projectName() ?></a></h3>
+                                        <div class="row divspace">
+                                            <div class="span3">
+                                                <div class="container-small">
+                                                    <a href="project-detail.php?norebvhksol=<?= uniqid().date('sihdmY') ?>&ahbfncli=<?= $projects[1]->id() ?>&bnufUizekP=<?= date('ihsdmY') ?>">
+                                                        <img class="img-height" alt="" src="<?= $projectPictureManager->getFirstProjectPictureByIdProject($projects[1]->id())->url() ?>">
+                                                    </a>
+                                                        <article class="text-small">
+                                                            <div class="infotexthv">
+                                                                <h3><a href="project-detail.php?norebvhksol=<?= uniqid().date('sihdmY') ?>&ahbfncli=<?= $projects[1]->id() ?>&bnufUizekP=<?= date('ihsdmY') ?>"><?= $residence ?> <?= $projects[1]->$projectName() ?></a></h3>
+                                                            </div>
+                                                        </article>
+                                                    </div>
                                                 </div>
-                                            </article>
+                                                <div class="span3">
+                                                    <div class="container-small">
+                                                        <a href="project-detail.php?norebvhksol=<?= uniqid().date('sihdmY') ?>&ahbfncli=<?= $projects[2]->id() ?>&bnufUizekP=<?= date('ihsdmY') ?>">
+                                                            <img class="img-height" alt="" src="<?= $projectPictureManager->getFirstProjectPictureByIdProject($projects[2]->id())->url() ?>">
+                                                        </a>
+                                                        <article class="text-small">        
+                                                            <div class="infotexthv">
+                                                                <h3><a href="project-detail.php?norebvhksol=<?= uniqid().date('sihdmY') ?>&ahbfncli=<?= $projects[2]->id() ?>&bnufUizekP=<?= date('ihsdmY') ?>"><?= $residence ?> <?= $projects[2]->$projectName() ?></a></h3>          
+                                                            </div>
+                                                        </article>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="span3">
+                                                    <div class="container-small">
+                                                        <a href="project-detail.php?norebvhksol=<?= uniqid().date('sihdmY') ?>&ahbfncli=<?= $projects[3]->id() ?>&bnufUizekP=<?= date('ihsdmY') ?>">
+                                                            <img class="img-height" alt="" src="<?= $projectPictureManager->getFirstProjectPictureByIdProject($projects[3]->id())->url() ?>">
+                                                        </a>
+                                                        <article class="text-small">
+                                                            <div class="infotexthv">
+                                                                <h3><a href="project-detail.php?norebvhksol=<?= uniqid().date('sihdmY') ?>&ahbfncli=<?= $projects[3]->id() ?>&bnufUizekP=<?= date('ihsdmY') ?>"><?= $residence ?> <?= $projects[3]->$projectName() ?></a></h3>
+                                                            </div>
+                                                        </article>
+                                                    </div>
+                                                </div>
+                                                <div class="span3">
+                                                    <div class="container-small">
+                                                        <a href="project-detail.php?norebvhksol=<?= uniqid().date('sihdmY') ?>&ahbfncli=<?= $projects[4]->id() ?>&bnufUizekP=<?= date('ihsdmY') ?>">
+                                                            <img class="img-height" alt="" src="<?= $projectPictureManager->getFirstProjectPictureByIdProject($projects[4]->id())->url() ?>">
+                                                        </a>    
+                                                        <article class="text-small">
+                                                            <div class="infotexthv">
+                                                                <h3><a href="project-detail.php?norebvhksol=<?= uniqid().date('sihdmY') ?>&ahbfncli=<?= $projects[4]->id() ?>&bnufUizekP=<?= date('ihsdmY') ?>"><?= $residence ?> <?= $projects[4]->$projectName() ?></a></h3>
+                                                            </div>
+                                                        </article>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="span6"> 
-                                        <div class="container-big">
-                                            <a href="project-detail.php?norebvhksol=<?= uniqid().date('sihdmY') ?>&ahbfncli=<?= $projects[2]->id() ?>&bnufUizekP=<?= date('ihsdmY') ?>">
-                                                <img class="img-height-big" alt="" src="<?= $projectPictureManager->getFirstProjectPictureByIdProject($projects[2]->id())->url() ?>">
-                                            </a>
-                                            <article class="text-big">
-                                                <div class="infotexthv">
-                                                    <h3><a href="project-detail.php?norebvhksol=<?= uniqid().date('sihdmY') ?>&ahbfncli=<?= $projects[2]->id() ?>&bnufUizekP=<?= date('ihsdmY') ?>"><?= $residence ?> <?= $projects[2]->$projectName() ?></a></h3>
+                                    <div class="row">
+                                        <div class="span6"> 
+                                            <div class="container-big">
+                                                <a href="project-detail.php?norebvhksol=<?= uniqid().date('sihdmY') ?>&ahbfncli=<?= $projects[5]->id() ?>&bnufUizekP=<?= date('ihsdmY') ?>">
+                                                    <img class="img-height-big" alt="" src="<?= $projectPictureManager->getFirstProjectPictureByIdProject($projects[5]->id())->url() ?>">
+                                                </a>
+                                                <article class="text-big">
+                                                    <div class="infotexthv">
+                                                        <h3><a href="project-detail.php?norebvhksol=<?= uniqid().date('sihdmY') ?>&ahbfncli=<?= $projects[5]->id() ?>&bnufUizekP=<?= date('ihsdmY') ?>"><?= $residence ?> <?= $projects[5]->$projectName() ?></a></h3>
+                                                    </div>
+                                                </article>
+                                            </div>
+                                        </div>
+                                        <div class="span6">
+                                            <div class="row divspace">
+                                                <div class="span3">
+                                                    <div class="container-small">
+                                                        <a href="project-detail.php?norebvhksol=<?= uniqid().date('sihdmY') ?>&ahbfncli=<?= $projects[6]->id() ?>&bnufUizekP=<?= date('ihsdmY') ?>">
+                                                            <img class="img-height" alt="" src="<?= $projectPictureManager->getFirstProjectPictureByIdProject($projects[6]->id())->url() ?>">
+                                                        </a>    
+                                                        <article class="text-small">
+                                                            <div class="infotexthv">
+                                                                <h3><a href="project-detail.php?norebvhksol=<?= uniqid().date('sihdmY') ?>&ahbfncli=<?= $projects[6]->id() ?>&bnufUizekP=<?= date('ihsdmY') ?>"> <?= $residence ?> <?= $projects[6]->$projectName() ?></a></h3>
+                                                            </div>
+                                                        </article>
+                                                    </div>
                                                 </div>
-                                            </article>
+                                                <div class="span3">
+                                                    <div class="container-small">
+                                                        <a href="project-detail.php?norebvhksol=<?= uniqid().date('sihdmY') ?>&ahbfncli=<?= $projects[7]->id() ?>&bnufUizekP=<?= date('ihsdmY') ?>">
+                                                            <img class="img-height" alt="" src="<?= $projectPictureManager->getFirstProjectPictureByIdProject($projects[7]->id())->url() ?>">
+                                                        </a>    
+                                                        <article class="text-small">
+                                                            <div class="infotexthv">
+                                                                <h3><a href="project-detail.php?norebvhksol=<?= uniqid().date('sihdmY') ?>&ahbfncli=<?= $projects[7]->id() ?>&bnufUizekP=<?= date('ihsdmY') ?>"> <?= $residence ?> <?= $projects[7]->$projectName() ?></a></h3>                                                               
+                                                            </div>
+                                                        </article>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="span3">
+                                                    <div class="container-small">
+                                                        <a href="project-detail.php?norebvhksol=<?= uniqid().date('sihdmY') ?>&ahbfncli=<?= $projects[8]->id() ?>&bnufUizekP=<?= date('ihsdmY') ?>">
+                                                            <img class="img-height" alt="" src="<?= $projectPictureManager->getFirstProjectPictureByIdProject($projects[8]->id())->url() ?>">
+                                                        </a>
+                                                        <article class="text-small">
+                                                            <div class="infotexthv">
+                                                                <h3><a href="project-detail.php?norebvhksol=<?= uniqid().date('sihdmY') ?>&ahbfncli=<?= $projects[8]->id() ?>&bnufUizekP=<?= date('ihsdmY') ?>"><?= $residence ?> <?= $projects[8]->$projectName() ?></a></h3>      
+                                                            </div>
+                                                        </article>
+                                                    </div>
+                                                </div>
+                                                <div class="span3">
+                                                    <div class="container-small">
+                                                        <a href="project-detail.php?norebvhksol=<?= uniqid().date('sihdmY') ?>&ahbfncli=<?= $projects[9]->id() ?>&bnufUizekP=<?= date('ihsdmY') ?>">
+                                                            <img class="img-height" alt="" src="<?= $projectPictureManager->getFirstProjectPictureByIdProject($projects[9]->id())->url() ?>">
+                                                        </a>
+                                                        <article class="text-small">
+                                                            <div class="infotexthv">
+                                                                <h3><a href="project-detail.php?norebvhksol=<?= uniqid().date('sihdmY') ?>&ahbfncli=<?= $projects[9]->id() ?>&bnufUizekP=<?= date('ihsdmY') ?>"><?= $residence ?> <?= $projects[9]->$projectName() ?> </a> </h3>
+                                                            </div>
+                                                        </article>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="span6"> 
-                                        <div class="container-big">
-                                            <a href="project-detail.php?norebvhksol=<?= uniqid().date('sihdmY') ?>&ahbfncli=<?= $projects[5]->id() ?>&bnufUizekP=<?= date('ihsdmY') ?>">
-                                                <img class="img-height-big" alt="" src="<?= $projectPictureManager->getFirstProjectPictureByIdProject($projects[5]->id())->url() ?>">
-                                            </a>
-                                            <article class="text-big">
-                                                <div class="infotexthv">
-                                                    <h3><a href="project-detail.php?norebvhksol=<?= uniqid().date('sihdmY') ?>&ahbfncli=<?= $projects[5]->id() ?>&bnufUizekP=<?= date('ihsdmY') ?>"><?= $residence ?> <?= $projects[5]->$projectName() ?></a></h3>
-                                                </div>
-                                            </article>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                                 </div>
                             </div>
                         </div>

@@ -1,0 +1,35 @@
+INSERT INTO `t_project` (`name`, `titre`, `adress`, `size`, `birthDate`, 
+`description`, `status`, `construction`, 
+`finition`, `idCompany`, `created`, `createdBy`) VALUES
+('Charkaoui', '-/-', 'Hay Al Matar - Nador', NULL, NULL, 
+'Le projet residence Charkaoui est un projet immobilier,
+qui s\'inscrit dans la continuite de nos ambitions precedentes .
+En esperant vous satisfaire bientôt.', 
+'0', NULL, NULL, 2, '2016-05-21 00:00:00', 'ceonodom');
+
+
+('Image 1', '', 
+NULL, 15, 2, '2016-01-28 00:00:00', 'ceonodom'),
+
+
+INSERT INTO `t_projectpicture` (`name`, `url`, `description`, `idProject`, `idCompany`, `created`, `createdBy`) 
+VALUES
+
+('Image 1', 'https://static.wixstatic.com/media/ca32d3_f762f74119a74345a241874388a9bc62.jpg', 
+NULL, 30, 2, '2016-01-28 00:00:00', 'ceonodom'),
+
+('Image 2', 'https://static.wixstatic.com/media/ca32d3_146fe5c5c7fd44bc8cd596850dfdaf77.jpg', 
+NULL, 30, 2, '2016-01-28 00:00:00', 'ceonodom'),
+
+('Image 3', 'https://static.wixstatic.com/media/ca32d3_166acb26c9604a79ad85608e6e1522eb.jpg', 
+NULL, 30, 2, '2016-01-28 00:00:00', 'ceonodom'),
+
+('Image 4', 'https://static.wixstatic.com/media/ca32d3_f95fd8c835124319838bd09d86715e95.jpg', 
+NULL, 30, 2, '2016-01-28 00:00:00', 'ceonodom'),
+
+('Image 5', 'https://static.wixstatic.com/media/ca32d3_fad4fdc77b6d4e5db24ce3c58a201847.jpg', 
+NULL, 30, 2, '2016-01-28 00:00:00', 'ceonodom'),
+
+('Image 6', 'https://static.wixstatic.com/media/ca32d3_c6b038bfc53a47558838844f7311e0e4.jpg', 
+NULL, 30, 2, '2016-01-28 00:00:00', 'ceonodom');
+

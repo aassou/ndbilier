@@ -21,12 +21,29 @@
     //class managers
     $companyManager = new CompanyManager($pdo);
     $companies = $companyManager->getCompanys();
+    //language settings
+    $pageTitle = "";
+    if ( $_SESSION['lang'] == "ar" ) {
+        $pageTitle = "شركاؤنا";    
+    }
+    else if ( $_SESSION['lang'] == "fr" ) {
+        $pageTitle = "Nos partenaires";
+    }
+    else if ( $_SESSION['lang'] == "de" ) {
+        $pageTitle = "Unsere Partner";
+    }
+    else if ( $_SESSION['lang'] == "es" ) {
+        $pageTitle = "Nuestros socios";
+    }
+    else if ( $_SESSION['lang'] == "nl" ) {
+        $pageTitle = "Onze partners";
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Nadobilier | Immobilier à Nador</title>
+        <title>Nadobilier | <?= $pageTitle ?></title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
@@ -59,24 +76,19 @@
                         <div class="gallery">
                             <!-- Gallery List -->
                             <div class="container">
-                                <h3>Nos partenaires </h3>
+                                <h3><?= $pageTitle ?></h3>
                                 <div class="row">
                                     <ul class="imggallery" id="able-list">
                                     <?php 
                                     foreach ( $companies as $company ) {
                                     ?>
                                         <li class="span4 house offices residential">
-                                            <div class="piclist">
-                                                <img alt="<?= $company->name() ?>" src="<?= $company->logo() ?>">
-                                                <div class="mask">
-                                                    <h2><?= $company->name() ?></h2>
-                                                    <p><?= $company->description() ?>.</p>
-                                                    <div class="info">
-                                                        <a href="projects-company.php?idCompany=<?= $company->id() ?>"><span class="icon-link" aria-hidden="true"></span></a>&nbsp;
-                                                        <a class="gallerybox"  href="projects-company.php?idCompany=<?= $company->id() ?>" title=""><span class="icon-search-font" aria-hidden="true"></span></a>
-                                                    </div>
+                                            <!--a href="projects-company.php?nvbfhye=<?php echo date('ishYmd') ?>&pocnzam=<?php echo $company->id() ?>&uid=<?php echo uniqid() ?>"-->
+                                            <a>
+                                                <div class="piclist">
+                                                    <img alt="<?= $company->name() ?>" src="<?= $company->logo() ?>">
                                                 </div>
-                                            </div>
+                                            </a>
                                         </li>
                                     <?php 
                                     }

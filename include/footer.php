@@ -24,7 +24,7 @@
         $fax = "الفاكس";
         $email = "البريد الاكتروني";
         //links
-        $links = "روابط أخرى";
+        $links = "التواصل الاجتماعي";
         $link1 = "رابط 1";
         $link2 = "رابط 2";
         $link3 = "رابط 3";
@@ -43,7 +43,7 @@
         $fax = "Fax";
         $email = "E-mail";
         //links
-        $links = "Autres liens";
+        $links = "Réseaux Sociaux";
         $link1 = "Lien 1";
         $link2 = "Lien 2";
         $link3 = "Lien 3";
@@ -62,7 +62,7 @@
         $fax = "Fax";
         $email = "E-mail";
         //links
-        $links = "Otros enlaces";
+        $links = "Redes sociales";
         $link1 = "Enlace 1";
         $link2 = "Enlace 2";
         $link3 = "Enlace 3";
@@ -81,7 +81,7 @@
         $fax = "Fax";
         $email = "E-mail";
         //links
-        $links = "Andere Links";
+        $links = "Soziale Netzwerke";
         $link1 = "Link 1";
         $link2 = "Link 2";
         $link3 = "Link 3";
@@ -100,7 +100,7 @@
         $fax = "Fax";
         $email = "E-mail";
         //links
-        $links = "Andere Links";
+        $links = "Sociale netwerken";
         $link1 = "Link 1";
         $link2 = "Link 2";
         $link3 = "Link 3";
@@ -119,7 +119,7 @@
         <!-- Footer box -->
             <div class="footer-top">
                 <div class="row">
-                    <div class="span4">
+                    <div class="span3">
                         <h3><?= $contact ?></h3>
                         <!--p>Pellentesque nec erat. Aenean semper, neque non faucibus. Malesuada, dui felis tempor felis, vel varius ante diam ut mauris. </p-->
                         <p>
@@ -128,13 +128,24 @@
                             <span><?= $email ?>&nbsp;:&nbsp;<a href="mailto:someone@example.com?Subject=Hello%20again">contact@nadobilier.com</a></span><br/>
                         </p>
                     </div>
-                    <div class="span4">
+                    <div class="span5">
                         <h3><?= $links ?></h3>
-                        <ul>
-                            <li><a href="#" title=""><?= $link1 ?></a></li>
-                            <li><a href="#" title=""><?= $link2 ?></a></li>
-                            <li><a href="#" title=""><?= $link3 ?></a></li>
-                        </ul>
+                        <div class="footer-bottom">
+                            <div class="row">
+                                <div class="span5">
+                                    <div class="social">
+                                        <ul>
+                                            <li><a class="facebook" title="" href="#"> Facebook </a></li>
+                                            <li><a class="twitter" title="" href="#"> twitter </a></li>
+                                            <li><a class="googplus" title="" href="#"> googplus </a></li>
+                                            <li><a class="pinterest" title="" href="#"> pinterest </a></li>
+                                            <!--li><a class="email" title="" href="#"> Email </a></li-->
+                                            <!--li><a class="feed" title="" href="#"> Feed </a></li-->
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="span4">
                         <h3><?= $stayTunned ?></h3>
@@ -149,7 +160,7 @@
                 </div>
             </div>
             <!-- End Footer box -->
-            <div class="footer-bottom">
+            <!--div class="footer-bottom">
                 <div class="row">
                     <div class="span6">
                         <p></p>
@@ -167,7 +178,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div-->
         </div>
     </div>
 </footer>

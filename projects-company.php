@@ -23,16 +23,57 @@
     $projectManager = new ProjectManager($pdo);
     $projectPictureManager = new ProjectPictureManager($pdo);
     //objs and vars
-    $idCompany = $_GET['idCompany'];
+    $idCompany = $_GET['pocnzam'];
     $companies = $companyManager->getCompanys();
     $projects = $projectManager->getProjectsByIdCompany($idCompany);
     $company = $companyManager->getCompanyById($idCompany);
+    //language settings
+    $pageTitle = $company->name();
+    $midPageTitle = "";
+    $moreButton = "";
+    $residence = "";
+    //tests
+    if ( $_SESSION['lang'] == "ar" ) {
+        $pageTitle = "مشاريع ".$pageTitle;
+        $residence = "إقامة";
+        $moreButton = "المزيد";
+        $midPageTitle = "مشاريع "."<strong>".ucfirst($company->name())."</strong>";
+        $projectName = "nameArabic";    
+    }
+    else if ( $_SESSION['lang'] == "fr" ) {
+        $pageTitle = $pageTitle." Projets";
+        $residence = "Résidence ";
+        $moreButton = "Voir plus";
+        $midPageTitle = "Les projets de <strong>".ucfirst($company->name())."</strong>";
+        $projectName = "name";
+    }
+    else if ( $_SESSION['lang'] == "de" ) {
+        $pageTitle = $pageTitle." Projekte";
+        $residence = "Residenz ";
+        $moreButton = "Mehr";
+        $midPageTitle = "<strong>".ucfirst($company->name())."</strong> Projekte";
+        $projectName = "name";
+    }
+    else if ( $_SESSION['lang'] == "es" ) {
+        $pageTitle = $pageTitle." Proyectos";
+        $residence = "Residencia";
+        $moreButton = "Ver más";
+        $midPageTitle = "Proyectos de <strong>".ucfirst($company->name())."</strong>";
+        $projectName = "name";
+    }
+    else if ( $_SESSION['lang'] == "nl" ) {
+        $pageTitle = $pageTitle." Projecten";
+        $residence = "Residentie";
+        $moreButton = "Meer";
+        $midPageTitle = "<strong>".ucfirst($company->name())."</strong> Projecten";
+        $projectName = "name";
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Nadobilier | Immobilier à Nador</title>
+        <title>Nadobilier | <?= $pageTitle ?></title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
@@ -61,7 +102,7 @@
                 <!-- Full width 1 -->
                     <div class="grid_full_width" id="fullwidth1">
                         <div class="all-text">
-                            <h3>Les projets de la société <strong><?= ucfirst($company->name()) ?></strong></h3>
+                            <h3><?= $midPageTitle ?></h3>
                         </div>
                         <div class="shop-nav clearfix">
                             <div class="row">
@@ -93,7 +134,7 @@
                                         $picture =  $projectPictureManager->getFirstProjectPictureByIdProject($project->id());
                                         $company = $companyManager->getCompanyById($project->idCompany());    
                                     ?>    
-                                    <a href="project-detail.php?idProject=<?= $project->id() ?>">
+                                    <a href="project-detail.php?norebvhksol=<?= uniqid().date('sihdmY') ?>&ahbfncli=<?= $project->id() ?>&bnufUizekP=<?= date('ihsdmY') ?>">
                                     <li style="display: block;" class="span12 first house offices Residential">
                                         <div class="product-item">
                                             <div class="row">
@@ -107,18 +148,19 @@
                                                     <div class="list-right-info">
                                                         <div class="row">
                                                             <div class="span4">
-                                                                <h3><a href="project-detail.php?idProject=<?= $project->id() ?>" title="">  <?= $project->name() ?></a></h3>
-                                                                <p><?= $project->description() ?></p>
+                                                                <h3><a href="project-detail.php?norebvhksol=<?= uniqid().date('sihdmY') ?>&ahbfncli=<?= $project->id() ?>&bnufUizekP=<?= date('ihsdmY') ?>"><?= $residence." ".$project->$projectName() ?></a></h3>
                                                             </div>
                                                             <div class="span4">
                                                                 <ul class="title-info">
-                                                                    <li>Société <span> <?= $company->name() ?></span></li>
-                                                                    <li>Date création <span> <?= date('d/m/Y', strtotime($project->birthDate())) ?></span> </li>
-                                                                    <li>Titre <span> <?= $project->titre() ?></span></li>
-                                                                    <li>Superficie <span><?= ceil($project->size()) ?> m<sup>2</sup></span></li>
-                                                                    <li>Adresse <span><?= $project->adress() ?></span></li>
-                                                                    <li>Avancement Gros Oeuvres <span> <?= $project->construction() ?>%</span></li>
-                                                                    <li>Avancement Finition <span> <?= $project->finition() ?>%</span></li>
+                                                                    <li><?= $project->description() ?></li>
+                                                                    <a class="btn btn-primary" href="project-detail.php?norebvhksol=<?= uniqid().date('sihdmY') ?>&ahbfncli=<?= $project->id() ?>&bnufUizekP=<?= date('ihsdmY') ?>"><?= $moreButton ?></a>
+                                                                    <!--li>Société <span> <?php //$company->name() ?></span></li>
+                                                                    <li>Date création <span> <?php //date('d/m/Y', strtotime($project->birthDate())) ?></span></li>
+                                                                    <li>Titre <span> <?php //$project->titre() ?></span></li>
+                                                                    <li>Superficie <span><?php //ceil($project->size()) ?> m<sup>2</sup></span></li>
+                                                                    <li>Adresse <span><?php //$project->adress() ?></span></li>
+                                                                    <li>Avancement Gros Oeuvres <span> <?php //$project->construction() ?>%</span></li>
+                                                                    <li>Avancement Finition <span> <?php //$project->finition() ?>%</span></li-->
                                                                 </ul>
                                                             </div>
                                                         </div>

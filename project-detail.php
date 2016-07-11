@@ -23,12 +23,66 @@
     $projectManager = new ProjectManager($pdo);
     $projectPictureManager = new ProjectPictureManager($pdo);
     //objs and vars
-    $idProject = $_GET['idProject'];
+    $idProject = $_GET['ahbfncli'];
     $companies = $companyManager->getCompanys();
     $projects = $projectManager->getProjects();
     $project = $projectManager->getProjectById($idProject);
     $pictures = $projectPictureManager->getProjectPicturesByIdProject($idProject);
     $company = $companyManager->getCompanyById($project->idCompany());    
+     //language settings
+    $pageTitle = $company->name();
+    $midPageTitle = "";
+    $moreButton = "";
+    $residence = "";
+    $similarProjects = "";
+    $address = "";
+    $projectName = "";
+    //tests
+    if ( $_SESSION['lang'] == "ar" ) {
+        $pageTitle = "مشاريع ".$pageTitle;
+        $residence = "إقامة";
+        $midPageTitle = "مشاريع "."<strong>".ucfirst($company->name())."</strong>";
+        $moreButton = "المزيد";
+        $projectName = "nameArabic";    
+        $similarProjects = "مشاريع مشابهة";
+        $address = "العنوان";
+    }
+    else if ( $_SESSION['lang'] == "fr" ) {
+        $pageTitle = $pageTitle." Projets";
+        $residence = "Résidence ";
+        $midPageTitle = "Les projets de <strong>".ucfirst($company->name())."</strong>";
+        $moreButton = "Voir plus";
+        $projectName = "name";
+        $similarProjects = "Projets similaires";
+        $address = "Adresse";
+    }
+    else if ( $_SESSION['lang'] == "de" ) {
+        $pageTitle = $pageTitle." Projekte";
+        $residence = "Residenz ";
+        $midPageTitle = "<strong>".ucfirst($company->name())."</strong> Projekte";
+        $moreButton = "Mehr";
+        $projectName = "name";
+        $similarProjects = "ähnliche projekte";
+        $address = "Adresse";
+    }
+    else if ( $_SESSION['lang'] == "es" ) {
+        $pageTitle = $pageTitle." Proyectos";
+        $residence = "Residencia";
+        $midPageTitle = "Proyectos de <strong>".ucfirst($company->name())."</strong>";
+        $moreButton = "Ver más";
+        $projectName = "name";
+        $similarProjects = "Proyectos similares";
+        $address = "Dirección";
+    }
+    else if ( $_SESSION['lang'] == "nl" ) {
+        $pageTitle = $pageTitle." Projecten";
+        $residence = "Residentie";
+        $midPageTitle = "<strong>".ucfirst($company->name())."</strong> Projecten";
+        $moreButton = "Meer";
+        $projectName = "name";
+        $similarProjects = "Soortgelijke projecten";
+        $address = "Adres";
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -89,7 +143,7 @@
                                     </section>
                                     <div class="infotext-detail">
                                         <h3><?= $company->name() ?></h3>
-                                        <span class="price">Résidence <?= $project->name() ?></span>
+                                        <span class="price"><?= $residence." ".$project->$projectName() ?></span>
                                         <div class="row">
                                             <div class="span260px">
                                                 <ul class="title-info">
@@ -111,13 +165,13 @@
                                         <div class="excerpt">
                                             <p><?= $project->description() ?></p>
                                         </div>
-                                        <div class="share">
+                                        <!--div class="share">
                                             <ul>
                                                 <li><a href="#"><img alt=""  src="img/icon/pinshare.jpg"></a></li>
                                                 <li><a href="#"><img alt=""  src="img/icon/twittershare.jpg"></a></li>
                                                 <li><a href="#"><img alt=""  src="img/icon/faceshare.jpg"></a></li>
                                             </ul>
-                                        </div>
+                                        </div-->
                                     </div>
                                 </div>
                                 <!-- End Property -->
@@ -126,19 +180,13 @@
                             <!-- Sidebar left  -->
                             <div class="span4">
                                 <div class="box-siderbar-container">
-                                <!-- sidebar-box map-box -->
-                                    <div class="sidebar-box map-box">
-                                        <h3>Addresse</h3>
-                                        <iframe width="260" height="285" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/?ie=UTF8&amp;ll=34.669359,-95.712891&amp;spn=40.915036,86.572266&amp;t=m&amp;z=4&amp;output=embed"></iframe>
-                                    </div>
-                                    <!-- End sidebar-box map-box -->            
                                     <!-- sidebar-box our-box -->
                                     <div class="sidebar-box our-box">
-                                        <h3>Contact</h3>
+                                        <h3><?= $menuTitles[3] ?></h3>
                                         <ul>
                                             <li>
                                                 <div class="our-border clearfix">
-                                                    <div class="our-img"><img alt="" height="90" width="90" src="img/imgdemo/90x90.gif"></div>
+                                                    
                                                     <div class="our-info">
                                                         <h4>No.1</h4>
                                                         <h5>05 36 60 05 00</h5>
@@ -150,9 +198,15 @@
                                         </ul>
                                     </div>
                                     <!-- End sidebar-box our-box -->
+                                    <!-- sidebar-box map-box -->
+                                    <div class="sidebar-box map-box">
+                                        <h3><?= $address ?></h3>
+                                        <iframe width="260" height="285" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/?ie=UTF8&amp;ll=34.669359,-95.712891&amp;spn=40.915036,86.572266&amp;t=m&amp;z=4&amp;output=embed"></iframe>
+                                    </div>
+                                    <!-- End sidebar-box map-box -->
                                     <!-- sidebar-box product_list_wg -->
                                     <div class="sidebar-box">
-                                        <h3>Projets similaires</h3>
+                                        <h3><?= $similarProjects ?></h3>
                                         <ul class="product_list_wg">
                                             <?php 
                                             for ($i=0; $i<3; $i++) {
@@ -161,9 +215,9 @@
                                             ?>
                                             <li>
                                                 <div class="clearfix">
-                                                    <a href="project-detail.php?idProject=<?= $projects[$i]->id() ?>">
+                                                    <a href="project-detail.php?norebvhksol=<?= uniqid().date('sihdmY') ?>&ahbfncli=<?= $projects[$i]->id() ?>&bnufUizekP=<?= date('ihsdmY') ?>">
                                                         <img width="90" height="54" alt="" class="thumbnail_pic" src="<?= $pic->url() ?>">
-                                                        <div class="amount">Résidence <?= $projects[$i]->name() ?></div>
+                                                        <div class="amount"><?= $residence." ".$projects[$i]->$projectName() ?></div>
                                                         <?= $companyName ?>
                                                     </a>
                                                 </div>

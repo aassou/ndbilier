@@ -128,7 +128,6 @@
                             <li>
                                 <div class="container flex-caption">
                                     <div class="title">
-                                        <!--span>140 SPRING LANES <br/>BEVERLY HILLS</span-->
                                     </div>
                                 </div>
                                 <img alt="" width="1440" height="600" src="img/slider/slider3.jpg" />
@@ -144,7 +143,6 @@
                             <li>
                                 <div class="container flex-caption">
                                     <div class="title">
-                                        <!--span>140 SPRING LANES <br/>BEVERLY HILLS</span-->
                                     </div>
                                 </div>
                                 <img alt="" width="1440" height="600" src="img/slider/slider5.jpg" />
