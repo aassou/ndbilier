@@ -31,6 +31,7 @@
     $moreButton = "";
     $residence = "";
     $projectName = "";
+    $descriptionName = "";
     //tests
     if ( $_SESSION['lang'] == "ar" ) {
         $pageTitle = "عقارات الناظور";
@@ -38,6 +39,7 @@
         $residence = "إقامة";
         $moreButton = "المزيد";
         $projectName = "nameArabic";
+        $descriptionName = "descriptionArabic";
     }
     else if ( $_SESSION['lang'] == "fr" ) {
         $pageTitle = "Immobilier Nador";
@@ -45,6 +47,7 @@
         $residence = "Résidence ";
         $moreButton = "Voir plus";
         $projectName = "name";
+        $descriptionName = "description";
     }
     else if ( $_SESSION['lang'] == "de" ) {
         $pageTitle = "Nador Immobilien";
@@ -52,6 +55,7 @@
         $residence = "Residenz ";
         $moreButton = "Mehr";
         $projectName = "name";
+        $descriptionName = "descriptionDE";
     }
     else if ( $_SESSION['lang'] == "es" ) {
         $pageTitle = "Inmuebles Nador";
@@ -59,6 +63,7 @@
         $residence = "Residencia";
         $moreButton = "Ver más";
         $projectName = "name";
+        $descriptionName = "descriptionES";
     }
     else if ( $_SESSION['lang'] == "nl" ) {
         $pageTitle = "Nador Real estate";
@@ -66,6 +71,7 @@
         $residence = "Residentie";
         $moreButton = "Meer";
         $projectName = "name";
+        $descriptionName = "descriptionNL";
     }
 ?>
 <!DOCTYPE html>
@@ -99,33 +105,10 @@
             <div class="properties">
                 <div class="container">
                 <!-- Full width 1 -->
-                    <div class="grid_full_width" id="fullwidth1">
-                        <div class="all-text">
+                    <div class="grid_full_width content-margin-top" id="fullwidth1">
+                        <!--div class="all-text"-->
                             <h3><?= $title ?></h3>
-                            <!--p></p-->
-                        </div>
-                        <div class="shop-nav clearfix">
-                            <div class="row">
-                                <!--div class="span6">
-                                    <div class="list-grid inleft">
-                                        <ul>
-                                            <li><a class="active" href="projects.php"><i class="grid2list"></i></a></li>
-                                            <li><a href="projects-4column.php"><i class="grid4col"></i></a></li>
-                                            <li><a href="projects-3column.php"><i class="grid3col"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div-->
-                                <!--div class="span6">
-                                    <div class="ordering pull-right">
-                                        <select class="orderby">
-                                            <option>Price, Low to High</option>
-                                            <option>Sort by most recent</option>
-                                            <option>Sort by price</option>
-                                        </select>
-                                    </div>
-                                </div-->
-                            </div>
-                        </div>
+                        <!--/div-->
                         <div class="row">
                             <div class="grid_list_product">
                                 <ul class="products" id="able-list">
@@ -152,15 +135,8 @@
                                                             </div>
                                                             <div class="span4">
                                                                 <ul class="title-info">
-                                                                    <li><?= $project->description() ?></li>    
+                                                                    <li><?= $project->$descriptionName() ?></li>    
                                                                     <a class="btn btn-primary" href="project-detail.php?norebvhksol=<?= uniqid().date('sihdmY') ?>&ahbfncli=<?= $project->id() ?>&bnufUizekP=<?= date('ihsdmY') ?>"><?= $moreButton ?></a>
-                                                                    <!--li>Société <span> <?php $company->name() ?></span></li>
-                                                                    <li>Date création <span> <?php date('d/m/Y', strtotime($project->birthDate())) ?></span> </li>
-                                                                    <li>Titre <span> <?php $project->titre() ?></span></li>
-                                                                    <li>Superficie <span><?php ceil($project->size()) ?> m<sup>2</sup></span></li>
-                                                                    <li>Adresse <span><?php $project->adress() ?></span></li>
-                                                                    <li>Avancement Gros Oeuvres <span> <?php $project->construction() ?>%</span></li>
-                                                                    <li>Avancement Finition <span> <?php $project->finition() ?>%</span></li-->
                                                                 </ul>
                                                             </div>
                                                         </div>

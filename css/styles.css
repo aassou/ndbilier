@@ -268,3 +268,31 @@ header .slider-home .flexslider:hover .flex-prev{opacity:0.8;left:5px;}header .s
 	display: block;
 	width:  80%;
 }
+
+.content-margin-top{
+	margin-top:30px;
+}
+
+.green-phone{
+	color: green;
+}
+
+.infos-font{
+	font-size: 20px;
+	font-family: 'Raleway',sans-serif;
+	font-weight: bold;
+}
+
+.about-messages-right{
+	font-size: 18px;
+	text-align: right;
+}
+
+.about-messages-left{
+	font-size: 18px;
+	text-align: left;
+}
+
+.blue-link{
+	color: #3366cc;
+}

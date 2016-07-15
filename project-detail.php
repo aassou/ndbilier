@@ -37,13 +37,15 @@
     $similarProjects = "";
     $address = "";
     $projectName = "";
+    $descriptionName = "";
     //tests
     if ( $_SESSION['lang'] == "ar" ) {
         $pageTitle = "مشاريع ".$pageTitle;
         $residence = "إقامة";
         $midPageTitle = "مشاريع "."<strong>".ucfirst($company->name())."</strong>";
         $moreButton = "المزيد";
-        $projectName = "nameArabic";    
+        $projectName = "nameArabic";
+        $descriptionName = "descriptionArabic";    
         $similarProjects = "مشاريع مشابهة";
         $address = "العنوان";
     }
@@ -53,6 +55,7 @@
         $midPageTitle = "Les projets de <strong>".ucfirst($company->name())."</strong>";
         $moreButton = "Voir plus";
         $projectName = "name";
+        $descriptionName = "description";
         $similarProjects = "Projets similaires";
         $address = "Adresse";
     }
@@ -62,6 +65,7 @@
         $midPageTitle = "<strong>".ucfirst($company->name())."</strong> Projekte";
         $moreButton = "Mehr";
         $projectName = "name";
+        $descriptionName = "descriptionDE";
         $similarProjects = "ähnliche projekte";
         $address = "Adresse";
     }
@@ -71,6 +75,7 @@
         $midPageTitle = "Proyectos de <strong>".ucfirst($company->name())."</strong>";
         $moreButton = "Ver más";
         $projectName = "name";
+        $descriptionName = "descriptionES";
         $similarProjects = "Proyectos similares";
         $address = "Dirección";
     }
@@ -80,6 +85,7 @@
         $midPageTitle = "<strong>".ucfirst($company->name())."</strong> Projecten";
         $moreButton = "Meer";
         $projectName = "name";
+        $descriptionName = "descriptionNL";
         $similarProjects = "Soortgelijke projecten";
         $address = "Adres";
     }
@@ -115,7 +121,7 @@
         <div class="main-content">
             <div class="properties">
                 <div class="container">
-                    <div class="grid_full_width gird_sidebar">
+                    <div class="grid_full_width gird_sidebar  content-margin-top">
                         <div class="row">         
                             <!-- Main content -->
                             <div class="span8">
@@ -144,26 +150,9 @@
                                     <div class="infotext-detail">
                                         <h3><?= $company->name() ?></h3>
                                         <span class="price"><?= $residence." ".$project->$projectName() ?></span>
-                                        <div class="row">
-                                            <div class="span260px">
-                                                <ul class="title-info">
-                                                    <!--li>Société <span> <?php //$company->name() ?></span></li-->
-                                                    <li>Titre <span> <?= $project->titre() ?></span></li>
-                                                    <li>Date création <span> <?= date('d/m/Y', strtotime($project->birthDate())) ?></span> </li>
-                                                    <li>Adresse <span><?= $project->adress() ?></span></li>
-                                                </ul>
-                                            </div>
-                                            <div class="span260px pull-right">
-                                                <ul class="title-info">
-                                                    <li>Superficie <span><?= ceil($project->size()) ?> m<sup>2</sup></span></li>
-                                                    <li>Avancement Gros Oeuvres <span> <?= $project->construction() ?>%</span></li>
-                                                    <li>Avancement Finition <span> <?= $project->finition() ?>%</span></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <br><br>
+                                        <br>
                                         <div class="excerpt">
-                                            <p><?= $project->description() ?></p>
+                                            <p><?= $project->$descriptionName() ?></p>
                                         </div>
                                         <!--div class="share">
                                             <ul>
@@ -186,12 +175,10 @@
                                         <ul>
                                             <li>
                                                 <div class="our-border clearfix">
-                                                    
                                                     <div class="our-info">
-                                                        <h4>No.1</h4>
-                                                        <h5>05 36 60 05 00</h5>
-                                                        <span>Call. </span>012.666.999 <br/>
-                                                        <span>Mail. </span><a href="mailto:someone@example.com?Subject=Hello%20again">JohnSmith@gmail.com</a>
+                                                        <p class="green-phone infos-font"><?= $company->telefon1() ?></p>
+                                                        <p class="green-phone infos-font"><?= $company->telefon2() ?></p>
+                                                        <p class="infos-font"><a target="_blank" href="mailto:<?= $company->email() ?>" class="blue-link"><?= $company->email() ?></a></p>
                                                     </div>
                                                 </div>
                                             </li>
@@ -201,7 +188,7 @@
                                     <!-- sidebar-box map-box -->
                                     <div class="sidebar-box map-box">
                                         <h3><?= $address ?></h3>
-                                        <iframe width="260" height="285" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/?ie=UTF8&amp;ll=34.669359,-95.712891&amp;spn=40.915036,86.572266&amp;t=m&amp;z=4&amp;output=embed"></iframe>
+                                        <iframe width="260" height="285" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/?ie=UTF8&amp;ll=<?= $project->latlong() ?>&amp;spn=40.915036,86.572266&amp;t=m&amp;z=15&amp;output=embed"></iframe>
                                     </div>
                                     <!-- End sidebar-box map-box -->
                                     <!-- sidebar-box product_list_wg -->

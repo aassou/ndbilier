@@ -12,14 +12,15 @@ class ProjectManager{
 	//BAISC CRUD OPERATIONS
 	public function add(Project $project){
     	$query = $this->_db->prepare(' INSERT INTO t_project (
-		name, nameArabic, titre, adress, size, birthDate, description, descriptionArabic, status, construction, finition, idCompany, created, createdBy)
-		VALUES (:name, :nameArabic, :titre, :adress, :size, :birthDate, :description, :descriptionArabic, :status, :construction, :finition, :idCompany, :created, :createdBy)')
+		name, nameArabic, titre, adress, latlong, size, birthDate, description, descriptionArabic, status, construction, finition, idCompany, created, createdBy)
+		VALUES (:name, :nameArabic, :titre, :adress, :latlong, :size, :birthDate, :description, :descriptionArabic, :status, :construction, :finition, :idCompany, :created, :createdBy)')
 		or die (print_r($this->_db->errorInfo()));
 		$query->bindValue(':name', $project->name());
         $query->bindValue(':nameArabic', $project->nameArabic());
 		$query->bindValue(':titre', $project->titre());
 		$query->bindValue(':adress', $project->adress());
 		$query->bindValue(':size', $project->size());
+        $query->bindValue(':latlong', $project->latlong());
 		$query->bindValue(':birthDate', $project->birthDate());
 		$query->bindValue(':description', $project->description());
         $query->bindValue(':descriptionArabic', $project->descriptionArabic());

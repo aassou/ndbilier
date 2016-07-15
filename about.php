@@ -6,12 +6,79 @@
     else if ( !isset($_GET['lang']) and !isset($_SESSION['lang']) ){
         $_SESSION['lang'] = "ar";    
     }
+    //language settings
+    $pageTitle = "";
+    $title = "";
+    $message1 = "";
+    $message2 = "";
+    $message3 = "";
+    $message4 = "";
+    $messageClass = "about-messages-left";
+    $address = "";
+    $telefon = "";
+    $email = ""; 
+    if ( $_SESSION['lang'] == "ar" ) {
+        $pageTitle = "اتصل بنا";
+        $title = 'مرحبا بكم في موقع <a href="index.php" class="blue-link">Nadobilier.com</a>';
+        $message1 = 'هو أول منصة مخصصة لقطاع العقارات في مدينة الناظور <a href="index.php" class="blue-link">Nadobilier.com</a> ';
+        $message2 = 'يسمح لك بالبحث عن كافة أنواع العقارات <a href="index.php" class="blue-link">Nadobilier.com</a>'.'<br>'.' شقق ,منازل ,مكاتب ,محلات تجارية أو قطع أرضية ';
+        $message3 = 'أنت ترغب في شراء أو بيع أو تأجير أو نشر الممتلكات الخاصة بك، ما عليك سوى زيارة موقنا  وسوف تجد احتياجاتك';
+        $message4 = 'لا تتردوا للاتصال بنا للمزيد من المعلومات';
+        $address = "شارع النسيم رقم1223 الناظور";
+        $telefon = '0613064330';
+        $email = '<a href="mailto:contact@nadobilier.com">contact@nadobilier.com</a>';
+        $messageClass = "about-messages-right";    
+    }
+    else if ( $_SESSION['lang'] == "fr" ) {
+        $pageTitle = "Contact";
+        $title = "Bienvenue chez Nadobilier!";
+        $message1 = '<a href="index.php" class="blue-link">Nadobilier.com</a> est la première plateforme dédiée au secteur de l\'immobilier sur la ville Nador.';
+        $message2 = '<a href="index.php" class="blue-link">Nadobilier.com</a> vous permet de trouver tous genres de biens immobiliers, que ça soit des appartements, des maisons, des bureaux, des locaux commerciaux ou des terrains.';
+        $message3 = 'Vous voulez acheter, vendre, louer ou publier votre bien, il vous suffit de visiter <a href="index.php" class="blue-link">Nadobilier.com</a> et vous trouverez vos besoins.';
+        $message4 = 'Si vous avez besoin d\'aide, n\'hésitez pas de nous contacter pour plus d\'informations, soyez les bienvenues.';
+        $address = "Rue Annassim N°1223 Nador";
+        $telefon = '06 13 06 43 30';
+        $email = '<a href="mailto:contact@nadobilier.com">contact@nadobilier.com</a>';
+    }
+    else if ( $_SESSION['lang'] == "de" ) {
+        $pageTitle = "Kontakt";
+        $title = "Willkommen Nadobilier!";
+        $message1 = '<a href="index.php" class="blue-link">Nadobilier.com</a> ist die erste Plattform für den Immobiliensektor der Stadt Nador gewidmet ist.';
+        $message2 = '<a href="index.php" class="blue-link">Nadobilier.com</a> ermöglicht es Ihnen, alle Arten von Immobilien zu finden, sei es Wohnungen, Häuser, Büros, Geschäftsräume oder Land.';
+        $message3 = 'Sie wollen kaufen, verkaufen, mieten oder Eigentum zu veröffentlichen, einfach <a href="index.php" class="blue-link">Nadobilier.com</a> besuchen, und Sie werden Ihre Bedürfnisse zu finden.';
+        $message4 = 'Wenn Sie Hilfe benötigen, kontaktieren Sie uns für weitere Informationen, willkommen.';
+        $address = "Straße Annassim N°1223 Nador";
+        $telefon = '06 13 06 43 30';
+        $email = '<a href="mailto:contact@nadobilier.com">contact@nadobilier.com</a>';
+    }
+    else if ( $_SESSION['lang'] == "es" ) {
+        $pageTitle = "Contacto";
+        $title = "Bienvenido Nadobilier!";
+        $message1 = '<a href="index.php" class="blue-link">Nadobilier.com</a> es la primera plataforma dedicada al sector inmobiliario de la ciudad de Nador.';
+        $message2 = '<a href="index.php" class="blue-link">Nadobilier.com</a> permite encontrar todo tipo de bienes inmuebles, ya se trate de apartamentos, casas, oficinas, locales comerciales o terrenos.';
+        $message3 = 'Usted quiere comprar, vender, alquilar o publicar su propiedad, sólo tiene que visitar <a href="index.php" class="blue-link">Nadobilier.com</a> y encontrará sus necesidades.';
+        $message4 = 'Si necesita ayuda, por favor, póngase en contacto con nosotros para obtener más información, será bienvenida.';
+        $address = "Calle Annassim N°1223 Nador";
+        $telefon = '06 13 06 43 30';
+        $email = '<a href="mailto:contact@nadobilier.com">contact@nadobilier.com</a>';
+    }
+    else if ( $_SESSION['lang'] == "nl" ) {
+        $pageTitle = "Contact";
+        $title = "Welkom Nadobilier!";
+        $message1 = '<a href="index.php" class="blue-link">Nadobilier.com</a> is het eerste platform dat zich toelegt op de onroerend goed sector van de stad Nador.';
+        $message2 = '<a href="index.php" class="blue-link">Nadobilier.com</a> kunt u alle soorten vastgoed te vinden, of het nu appartementen, huizen, kantoren, commerciële ruimten of grond.';
+        $message3 = 'U wilt kopen, verkopen, verhuren of uw woning te publiceren, gaat u naar <a href="index.php" class="blue-link">Nadobilier.com</a> en u zult uw behoeften.';
+        $message4 = 'Als u hulp nodig hebt, neem dan contact met ons op voor meer informatie, zijn welkom.';
+        $address = "Straat Annassim N°1223 Nador";
+        $telefon = '06 13 06 43 30';
+        $email = '<a href="mailto:contact@nadobilier.com">contact@nadobilier.com</a>';
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Nadobilier | Immobilier à Nador</title>
+        <title>Nadobilier | <?= $pageTitle ?></title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
@@ -33,138 +100,49 @@
         <div class="main-content">
             <div class="properties">
                 <div class="container">
-                    <div class="grid_full_width">
+                    <div class="grid_full_width content-margin-top">
                         <div class="about_us">
                             <div class="welcome">
                                 <div class="row">
                                     <div class="span6">
-                                        <div class="picct"> <img src="img/imgdemo/430x230.gif" alt=""> </div>
+                                        <div class="picct"> <img src="img/nador-430x230.jpg" alt=""> </div>
                                     </div>
                                     <div class="span6">
                                         <div class="textct">
-                                            <h4>Bienvenue chez Nadobilier!</h4>
-                                            <p> Nadobilier est une plateforme immobilière qui vous aide à trouver l'appartement de vos rêves, la maison pour votre famille ou votre futur local commercial. </p>
-                                            <p> Nadobilier joue le rôle d'intermédiaire entre les clients et les sociétés sans aucun effort.</p>
-                                            <p> Avec Nadobilier, vous pouvez aussi demander des consultations commercialles, juridiques et même administratives . </p>
+                                            <h1><?= $title ?></h1>
+                                            <p class="<?= $messageClass ?>"><?= $message1 ?></p>
+                                            <p class="<?= $messageClass ?>"><?= $message2 ?></p>
+                                            <p class="<?= $messageClass ?>"><?= $message3 ?></p>
+                                            <p class="<?= $messageClass ?>"><?= $message4 ?></p>
                                         </div>
                                     </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="span8">
+                                        <div class="">
+                                            <div class="contact-bor">
+                                                <div class="map"><iframe width="580" height="285" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/?ie=UTF8&amp;ll=35.169665, -2.926958&amp;spn=40.915036,86.572266&amp;t=m&amp;z=15&amp;output=embed"></iframe></div>
+                                            </div>
+                                        </div>
+                                    </div>        
+                                    <div class="span4">
+                                        <div class="contact">
+                                            <div class="">
+                                                <div class="add-contact">
+                                                    <div class="row">
+                                                        <div class="span280px pull-right">
+                                                            <h2><?= $address ?></h2>
+                                                            <h2 class="green-phone"><?= $telefon ?></h2>
+                                                            <h2><?= $email ?></h2>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>        
                                 </div>
                             </div>
-                            <div class="listsv">
-                                <h4>Nos services</h4>
-                                <div class="row">
-                                    <div class="span4">
-                                        <h6><i class="icon-search-font" aria-hidden="true"></i><span>Nouvelles offres</span></h6>
-                                        <p>Vous ne serais pas obligé de chercher par vous même, juste accéder à notre site <a href="http://nadobilier.com">Nadobilier.com</a> et vous trouverez tous ce que vous cherchez. </p>
-                                    </div>
-                                    <div class="span4">
-                                        <h6><i class="icon-envelope-2" aria-hidden="true"></i><span>Consultations et conseils </span></h6>
-                                        <p>Suite à son engagement dans le domaine immobilière à Nador et à la région de l'Oriental, Nadobilier vous aide à choisir, à trouver les porduits et services de qualités. </p>
-                                    </div>
-                                    <div class="span4">
-                                        <h6><i class="icon-link" aria-hidden="true"></i><span>Services immobiliers</span></h6>
-                                        <p>Grâce à son réseau d'experts et de professionnels, Nadobilier offre aussi une gamme de services immobilier, que ça soit juridiques, commercials, administratives et même techniques à ses clients.</p> 
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="choseus">
-                                <div class="row">
-                                    <div class="span6">
-                                        <h4>Pourquoi nous choisir?</h4>
-                                        <div class="showhideabout">
-                                            <ul>
-                                                <li> <span class="btshowhide" id="fag1" rel="1"> Leader du marché </span>
-                                                    <div class="abouttext class1"> Nadobilier est le leader du marché electronique immobilier. </div>
-                                                </li>
-                                                <li> <span class="btshowhide" id="fag2" rel="2"> Service de Qualité </span>
-                                                    <div class="abouttext class2"> Grâce à son expertise technique et professionnel, Nadobilier vous garantit des services de haute qualité. </div>
-                                                </li>
-                                                <li> <span class="btshowhide" id="fag3" rel="3"> Confiance et fidélité </span>
-                                                    <div class="abouttext class3"> Le client est un roi, c'est le slogan de Nadobilier. </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="span6">
-                                        <h4>Témoignages clients</h4>
-                                        <div class="agentpost">
-                                            <div class="imgag"><img src="img/imgdemo/agab.jpg" alt=""><span class="name">Jonh Doe,</span> <span>Directeur et co-fondateur</span></div>
-                                            <div class="postttmn">
-                                                <p> “ Notre groupe a confié à Nadobilier sa nouvelle campagne publicitaire eléctronique, ainsi que la construction de notre système informatique immobilier. Nous sommes très satisfaits et heurux des résultats obtenus.</p>
-                                            </div>
-                                        </div>
-                                        <div class="agentpost">
-                                            <div class="imgag"><img src="img/imgdemo/agab.jpg" alt=""><span class="name">Jonh Doe,</span> <span>Directeur Général</span></div>
-                                            <div class="postttmn">
-                                                <p> “ Notre groupe a confié à Nadobilier sa nouvelle campagne publicitaire eléctronique, ainsi que la construction de notre système informatique immobilier. Nous sommes très satisfaits et heurux des résultats obtenus.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--div class="moteam">
-                                <h4>Meet Our Team</h4>
-                                <div class="row">
-                                    <ul>
-                                        <li class="span6 first">
-                                            <div class="row">
-                                                <div class="span180">
-                                                    <div class="picimg"><img width="160" height="160" src="img/imgdemo/160x160.gif" alt=""></div>
-                                                </div>
-                                                <div class="span260px">
-                                                    <h6>John Doe</h6> <span>Co-Founder</span>
-                                                    <p>Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. </p>
-                                                    <div class="socialmo"> <a href="#" title=""><i class="icon-facebook-2" aria-hidden="true"></i></a>
-                                                        <a href="#" title=""> <i class="icon-twitter-3" aria-hidden="true"></i></a> <a href="#" title=""><i class="icon-google-plus-2" aria-hidden="true"></i></a>
-                                                        <a href="#" title=""> <i class="icon-envelope-2" aria-hidden="true"></i></a> <a href="#" title=""><i class="icon-feed" aria-hidden="true"></i></a> </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="span6">
-                                            <div class="row">
-                                                <div class="span180">
-                                                    <div class="picimg"><img width="160" height="160" src="img/imgdemo/160x160.gif" alt=""></div>
-                                                </div>
-                                                <div class="span260px">
-                                                    <h6>John Doe</h6> <span>Co-Founder</span>
-                                                    <p>Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. </p>
-                                                    <div class="socialmo"> <a href="#" title=""><i class="icon-facebook-2" aria-hidden="true"></i></a>
-                                                        <a href="#" title=""> <i class="icon-twitter-3" aria-hidden="true"></i></a> <a href="#" title=""><i class="icon-google-plus-2" aria-hidden="true"></i></a>
-                                                        <a href="#" title=""> <i class="icon-envelope-2" aria-hidden="true"></i></a> <a href="#" title=""><i class="icon-feed" aria-hidden="true"></i></a> </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="span6 first">
-                                            <div class="row">
-                                                <div class="span180">
-                                                    <div class="picimg"><img width="160" height="160" src="img/imgdemo/160x160.gif" alt=""></div>
-                                                </div>
-                                                <div class="span260px">
-                                                    <h6>John Doe</h6> <span>Co-Founder</span>
-                                                    <p>Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. </p>
-                                                    <div class="socialmo"> <a href="#" title=""><i class="icon-facebook-2" aria-hidden="true"></i></a>
-                                                        <a href="#" title=""> <i class="icon-twitter-3" aria-hidden="true"></i></a> <a href="#" title=""><i class="icon-google-plus-2" aria-hidden="true"></i></a>
-                                                        <a href="#" title=""> <i class="icon-envelope-2" aria-hidden="true"></i></a> <a href="#" title=""><i class="icon-feed" aria-hidden="true"></i></a> </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="span6">
-                                            <div class="row">
-                                                <div class="span180">
-                                                    <div class="picimg"><img width="160" height="160" src="img/imgdemo/160x160.gif" alt=""></div>
-                                                </div>
-                                                <div class="span260px">
-                                                    <h6>John Doe</h6> <span>Co-Founder</span>
-                                                    <p>Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. </p>
-                                                    <div class="socialmo"> <a href="#" title=""><i class="icon-facebook-2" aria-hidden="true"></i></a>
-                                                        <a href="#" title=""> <i class="icon-twitter-3" aria-hidden="true"></i></a> <a href="#" title=""><i class="icon-google-plus-2" aria-hidden="true"></i></a>
-                                                        <a href="#" title=""> <i class="icon-envelope-2" aria-hidden="true"></i></a> <a href="#" title=""><i class="icon-feed" aria-hidden="true"></i></a> </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div-->
                         </div>
                     </div>
                 </div>

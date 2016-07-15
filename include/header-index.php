@@ -21,54 +21,64 @@
                                 //menuElements
                                 $menuTitles = array();
                                 if ( $_SESSION['lang'] == "ar" ) {
-                                    $langTitle = "العربية";
+                                    $langTitle = "ع";
                                     $langLink = "index.php?lang=ar";
                                     $langIcon = "img/icon/flags/arabic.png";
                                     $langAlt = "AR";  
                                     $menuTitles[0] = "مشاريع سكنية";
                                     $menuTitles[1] = "شركاؤنا";
-                                    $menuTitles[2] = "من نحن";
+                                    $menuTitles[2] = "اتصل بنا";
                                     $menuTitles[3] = "اتصل بنا";
+                                    $menuTitles[4] = "كراء";
+                                    $menuTitles[5] = "شراء";
                                 }
                                 else if ( $_SESSION['lang'] == "fr" ) {
-                                    $langTitle = "Français";
+                                    $langTitle = "FR";
                                     $langLink = "index.php?lang=fr";
                                     $langIcon = "img/icon/flags/french.png";
                                     $langAlt = "FR";
                                     $menuTitles[0] = "Projets";
                                     $menuTitles[1] = "Partenaires";
-                                    $menuTitles[2] = "À propos";
-                                    $menuTitles[3] = "Contact";    
+                                    $menuTitles[2] = "Contact";
+                                    $menuTitles[3] = "Contact";
+                                    $menuTitles[4] = "Louer";
+                                    $menuTitles[5] = "Acheter";    
                                 }
                                 else if ( $_SESSION['lang'] == "es" ) {
-                                    $langTitle = "Español";
+                                    $langTitle = "ES";
                                     $langLink = "index.php?lang=es";
                                     $langIcon = "img/icon/flags/spain.png";
                                     $langAlt = "";
                                     $menuTitles[0] = "Proyectos";
                                     $menuTitles[1] = "Socios";
-                                    $menuTitles[2] = "Sobre Nadobilier";
-                                    $menuTitles[3] = "Contacto";    
+                                    $menuTitles[2] = "Contacto";
+                                    $menuTitles[3] = "Contacto";
+                                    $menuTitles[4] = "Alquilar";
+                                    $menuTitles[5] = "Comprar";    
                                 }
                                 else if ( $_SESSION['lang'] == "de" ) {
-                                    $langTitle = "Deutschland";
+                                    $langTitle = "DE";
                                     $langLink = "index.php?lang=de";
                                     $langIcon = "img/icon/flags/german.png";
                                     $langAlt = "DE";    
                                     $menuTitles[0] = "Projekte";
                                     $menuTitles[1] = "Partner";
-                                    $menuTitles[2] = "Über uns";
+                                    $menuTitles[2] = "Kontakt";
                                     $menuTitles[3] = "Kontakt";
+                                    $menuTitles[4] = "Mieten";
+                                    $menuTitles[5] = "Kaufen";
                                 }
                                 else if ( $_SESSION['lang'] == "nl" ) {
-                                    $langTitle = "Nederland";
+                                    $langTitle = "NL";
                                     $langLink = "index.php?lang=de";
                                     $langIcon = "img/icon/flags/netherlands.png";
                                     $langAlt = "NL";    
                                     $menuTitles[0] = "Projecten";
                                     $menuTitles[1] = "Partner";
-                                    $menuTitles[2] = "Over ons";
+                                    $menuTitles[2] = "Contact";
                                     $menuTitles[3] = "Contact";
+                                    $menuTitles[4] = "Huur";
+                                    $menuTitles[5] = "Kopen";
                                 }
                                 ?>
                                 <a href="<?php //$langLink ?>"><img src="<?= $langIcon ?>" alt="<?= $langAlt ?>" />&nbsp;<?= $langTitle ?></a>
@@ -92,10 +102,12 @@
                                 <div class="clearfix"></div>
                             </li>
                             <li <?php if ($currentPage == "index.php"){ echo 'class="active"'; } ?> ><a class="brand" href="index.php" title="">Accueil</a></li>
+                            <li <?php if ($currentPage == "rent.php"){ echo 'class="active"'; } ?> ><a href="rent.php" title=""><?= $menuTitles[4] ?></a></li>
+                            <li <?php if ($currentPage == "buy.php"){ echo 'class="active"'; } ?> ><a href="buy.php" title=""><?= $menuTitles[5] ?></a></li>
                             <li <?php if ($currentPage == "projects.php" or $currentPage == "project-detail.php"){ echo 'class="active"'; } ?> ><a href="projects.php" title=""><?= $menuTitles[0] ?></a></li>
                             <li <?php if ($currentPage == "companies.php"){ echo 'class="active"'; } ?> ><a href="companies.php" title=""><?= $menuTitles[1] ?></a></li>
                             <li <?php if ($currentPage == "about.php"){ echo 'class="active"'; } ?> ><a href="about.php" title=""><?= $menuTitles[2] ?></a></li>
-                            <li <?php if ($currentPage == "contact.php"){ echo 'class="active"'; } ?> ><a href="contact.php" title=""><?= $menuTitles[3] ?></a></li>
+                            <!--li <?php //if ($currentPage == "contact.php"){ echo 'class="active"'; } ?> ><a href="contact.php" title=""><?php //echo $menuTitles[3] ?></a></li-->
                         </ul>
                     </div>
                 </div>

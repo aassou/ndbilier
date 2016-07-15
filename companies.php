@@ -71,7 +71,7 @@
         <div class="main-content">
             <div class="properties">
                 <div class="container">
-                    <div class="grid_full_width">
+                    <div class="grid_full_width content-margin-top">
                         <!-- Gallery -->
                         <div class="gallery">
                             <!-- Gallery List -->

@@ -8,9 +8,13 @@ class Project{
 	private $_titre;
 	private $_adress;
 	private $_size;
+    private $_latlong;
 	private $_birthDate;
 	private $_description;
     private $_descriptionArabic;
+    private $_descriptionNL;
+    private $_descriptionDE;
+    private $_descriptionES;
 	private $_status;
 	private $_construction;
 	private $_finition;
@@ -60,6 +64,10 @@ class Project{
 	public function setSize($size){
 		$this->_size = $size;
    	}
+    
+    public function setLatlong($latlong){
+        $this->_latlong = $latlong;
+    }
 
 	public function setBirthDate($birthDate){
 		$this->_birthDate = $birthDate;
@@ -71,6 +79,18 @@ class Project{
     
     public function setDescriptionArabic($descriptionArabic){
         $this->_descriptionArabic = $descriptionArabic;
+    }
+    
+    public function setDescriptionDE($descriptionDE){
+        $this->_descriptionDE = $descriptionDE;
+    }
+    
+    public function setDescriptionNL($descriptionNL){
+        $this->_descriptionNL = $descriptionNL;
+    }
+    
+    public function setDescriptionES($descriptionES){
+        $this->_descriptionES = $descriptionES;
     }
 
 	public function setStatus($status){
@@ -129,6 +149,10 @@ class Project{
 	public function size(){
 		return $this->_size;
    	}
+    
+    public function latlong(){
+        return $this->_latlong;
+    }
 
 	public function birthDate(){
 		return $this->_birthDate;
@@ -140,6 +164,18 @@ class Project{
     
     public function descriptionArabic(){
         return $this->_descriptionArabic;
+    }
+    
+    public function descriptionDE(){
+        return $this->_descriptionDE;
+    }
+    
+    public function descriptionNL(){
+        return $this->_descriptionNL;
+    }
+    
+    public function descriptionES(){
+        return $this->_descriptionES;
     }
 
 	public function status(){
