@@ -26,7 +26,7 @@
         $message4 = 'لا تتردوا للاتصال بنا للمزيد من المعلومات';
         $address = "شارع النسيم رقم1223 الناظور";
         $telefon = '0613064330';
-        $email = '<a href="mailto:contact@nadobilier.com">contact@nadobilier.com</a>';
+        $email = '<a class="blue-link" href="mailto:contact@nadobilier.com">contact@nadobilier.com</a>';
         $messageClass = "about-messages-right";    
     }
     else if ( $_SESSION['lang'] == "fr" ) {
@@ -38,7 +38,7 @@
         $message4 = 'Si vous avez besoin d\'aide, n\'hésitez pas de nous contacter pour plus d\'informations, soyez les bienvenues.';
         $address = "Rue Annassim N°1223 Nador";
         $telefon = '06 13 06 43 30';
-        $email = '<a href="mailto:contact@nadobilier.com">contact@nadobilier.com</a>';
+        $email = '<a class="blue-link" href="mailto:contact@nadobilier.com">contact@nadobilier.com</a>';
     }
     else if ( $_SESSION['lang'] == "de" ) {
         $pageTitle = "Kontakt";
@@ -49,7 +49,7 @@
         $message4 = 'Wenn Sie Hilfe benötigen, kontaktieren Sie uns für weitere Informationen, willkommen.';
         $address = "Straße Annassim N°1223 Nador";
         $telefon = '06 13 06 43 30';
-        $email = '<a href="mailto:contact@nadobilier.com">contact@nadobilier.com</a>';
+        $email = '<a class="blue-link" href="mailto:contact@nadobilier.com">contact@nadobilier.com</a>';
     }
     else if ( $_SESSION['lang'] == "es" ) {
         $pageTitle = "Contacto";
@@ -60,7 +60,7 @@
         $message4 = 'Si necesita ayuda, por favor, póngase en contacto con nosotros para obtener más información, será bienvenida.';
         $address = "Calle Annassim N°1223 Nador";
         $telefon = '06 13 06 43 30';
-        $email = '<a href="mailto:contact@nadobilier.com">contact@nadobilier.com</a>';
+        $email = '<a class="blue-link" href="mailto:contact@nadobilier.com">contact@nadobilier.com</a>';
     }
     else if ( $_SESSION['lang'] == "nl" ) {
         $pageTitle = "Contact";
@@ -71,7 +71,7 @@
         $message4 = 'Als u hulp nodig hebt, neem dan contact met ons op voor meer informatie, zijn welkom.';
         $address = "Straat Annassim N°1223 Nador";
         $telefon = '06 13 06 43 30';
-        $email = '<a href="mailto:contact@nadobilier.com">contact@nadobilier.com</a>';
+        $email = '<a class="blue-link" href="mailto:contact@nadobilier.com">contact@nadobilier.com</a>';
     }
 ?>
 <!DOCTYPE html>

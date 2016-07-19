@@ -90,7 +90,7 @@
                                     <li><a href="index.php?lang=fr"><img src="img/icon/flags/french.png" alt="FR" />&nbsp;Français</a></li>
                                     <?php } ?>
                                     <?php if ( $_SESSION['lang'] !="de" ) { ?>
-                                    <li><a href="index.php?lang=de"><img src="img/icon/flags/german.png" alt="DE" />&nbsp;Deutschland</a></li>
+                                    <li><a href="index.php?lang=de"><img src="img/icon/flags/german.png" alt="DE" />&nbsp;Deutsch</a></li>
                                     <?php } ?>
                                     <?php if ( $_SESSION['lang'] !="nl" ) { ?>
                                     <li><a href="index.php?lang=nl"><img src="img/icon/flags/netherlands.png" alt="NL" />&nbsp;Nederland</a></li>
@@ -121,6 +121,14 @@
                 <section class="slider">
                     <div id="main-slider" class="flexslider">
                         <ul class="slides">
+                            <li>
+                                <div class="container flex-caption">
+                                    <div class="title">
+                                        <span>L'immobilier à Nador <br/>Nouvel horizon</span>
+                                    </div>
+                                </div>
+                                <img alt="" width="1440" height="600" src="img/slider/slider0.jpg" />
+                            </li>
                             <li>
                                 <div class="container flex-caption">
                                     <div class="title">

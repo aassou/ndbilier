@@ -53,7 +53,7 @@
                                 $menuTitles[1] = "Socios";
                                 $menuTitles[2] = "Contacto";
                                 $menuTitles[3] = "Contacto";
-                                $menuTitles[4] = "Alquila";
+                                $menuTitles[4] = "Alquilar";
                                 $menuTitles[5] = "Comprar";    
                             }
                             else if ( $_SESSION['lang'] == "de" ) {
@@ -90,7 +90,7 @@
                                 <li><a href="index.php?lang=fr"><img src="img/icon/flags/french.png" alt="FR" />&nbsp;Français</a></li>
                                 <?php } ?>
                                 <?php if ( $_SESSION['lang'] !="de" ) { ?>
-                                <li><a href="index.php?lang=de"><img src="img/icon/flags/german.png" alt="DE" />&nbsp;Deutschland</a></li>
+                                <li><a href="index.php?lang=de"><img src="img/icon/flags/german.png" alt="DE" />&nbsp;Deutsch</a></li>
                                 <?php } ?>
                                 <?php if ( $_SESSION['lang'] !="nl" ) { ?>
                                 <li><a href="index.php?lang=nl"><img src="img/icon/flags/netherlands.png" alt="NL" />&nbsp;Nederland</a></li>

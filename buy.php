@@ -8,6 +8,7 @@
     }
     //language settings
     $pageTitle = "";
+    $title = "";
     $all = "";
     $apartment = "";
     $house = "";
@@ -15,7 +16,8 @@
     $land = "";
     $store = ""; 
     if ( $_SESSION['lang'] == "ar" ) {
-        $pageTitle = "شراء";  
+        $pageTitle = "شراء";
+        $title = "للبيع";  
         $all = "جميع";
         $apartment = "شقق";
         $house = "منازل";
@@ -25,6 +27,7 @@
     }
     else if ( $_SESSION['lang'] == "fr" ) {
         $pageTitle = "Acheter";
+        $title = "à vendre";
         $all = "Tout";
         $apartment = "Appartement";
         $house = "Maison";
@@ -35,6 +38,7 @@
     }
     else if ( $_SESSION['lang'] == "de" ) {
         $pageTitle = "Kaufen";
+        $title = "Zu Verkaufen";
         $all = "Alle";
         $apartment = "Wohnung";
         $house = "Haus";
@@ -44,6 +48,7 @@
     }
     else if ( $_SESSION['lang'] == "es" ) {
         $pageTitle = "Comprar";
+        $title = "En Venta";
         $all = "Todos";
         $apartment = "Apartamento";
         $house = "Casa";
@@ -53,6 +58,7 @@
     }
     else if ( $_SESSION['lang'] == "nl" ) {
         $pageTitle = "Kopen";
+        $title = "Te Koop";
         $all = "Alle";
         $apartment = "Appartement";
         $house = "Huis";
@@ -94,6 +100,7 @@
                 <div class="container">
                     <!-- Grid full width 3 column -->
                     <div class="grid_full_width content-margin-top" id="3column">
+                        <h1><?= $title ?></h1>
                         <div class="filter-pro clearfix">
                             <div class="row">
                                 <div class="span12">
