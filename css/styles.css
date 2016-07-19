@@ -296,3 +296,11 @@ header .slider-home .flexslider:hover .flex-prev{opacity:0.8;left:5px;}header .s
 .blue-link{
 	color: #3366cc;
 }
+
+.more-button{
+	color: #FFFFFF;
+}
+
+.more-button:hover{
+	color: #000000;
+}

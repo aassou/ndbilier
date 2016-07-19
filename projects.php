@@ -117,13 +117,14 @@
                                         $picture =  $projectPictureManager->getFirstProjectPictureByIdProject($project->id());
                                         $company = $companyManager->getCompanyById($project->idCompany());    
                                     ?>    
-                                    <a href="project-detail.php?idProject=<?= $project->id() ?>">
                                     <li style="display: block;" class="span12 first house offices Residential">
                                         <div class="product-item">
                                             <div class="row">
                                                 <div class="span4">
                                                     <div class="imagewrapper">
-                                                        <img alt="" width="300" height="180" src="<?= $picture->url() ?>">
+                                                        <a href="project-detail.php?norebvhksol=<?= uniqid().date('sihdmY') ?>&ahbfncli=<?= $project->id() ?>&bnufUizekP=<?= date('ihsdmY') ?>">
+                                                            <img alt="" width="300" height="180" src="<?= $picture->url() ?>">
+                                                        </a>
                                                         <!--span class="price"> 30 Appartements/ 20 Locaux commerciaux</span-->
                                                     </div>
                                                 </div>
@@ -145,7 +146,6 @@
                                             </div>
                                         </div>
                                     </li>
-                                    </a>
                                     <?php } ?>
                                 </ul>
                             </div>

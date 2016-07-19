@@ -3,6 +3,7 @@ class Property{
 
 	//attributes
 	private $_id;
+    private $_category;
 	private $_nameAR;
 	private $_nameFR;
 	private $_nameES;
@@ -15,6 +16,7 @@ class Property{
 	private $_descriptionNL;
 	private $_price;
 	private $_address;
+    private $_latlong;
 	private $_phone;
 	private $_type;
 	private $_img1;
@@ -46,6 +48,11 @@ class Property{
 	public function setId($id){
     	$this->_id = $id;
     }
+    
+    public function setCategory($category){
+        $this->_category = $category;
+    }
+    
 	public function setNameAR($nameAR){
 		$this->_nameAR = $nameAR;
    	}
@@ -93,6 +100,10 @@ class Property{
 	public function setAddress($address){
 		$this->_address = $address;
    	}
+    
+    public function setLatlong($latlong){
+        $this->_latlong = $latlong;
+    }
 
 	public function setPhone($phone){
 		$this->_phone = $phone;
@@ -138,6 +149,11 @@ class Property{
 	public function id(){
     	return $this->_id;
     }
+    
+    public function category(){
+        return $this->_category;
+    }
+    
 	public function nameAR(){
 		return $this->_nameAR;
    	}
@@ -185,6 +201,10 @@ class Property{
 	public function address(){
 		return $this->_address;
    	}
+    
+    public function latlong(){
+        return $this->_latlong;
+    }
 
 	public function phone(){
 		return $this->_phone;

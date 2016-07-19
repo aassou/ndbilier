@@ -1,20 +1,39 @@
 <?php
+        //classes loading begin
+    function classLoad ($myClass) {
+        if(file_exists('admin/model/'.$myClass.'.php')){
+            include('admin/model/'.$myClass.'.php');
+        }
+        elseif(file_exists('admin/controller/'.$myClass.'.php')){
+            include('admin/controller/'.$myClass.'.php');
+        }
+    }
+    spl_autoload_register("classLoad");
+    //classes loading end
     session_start();
+    include('include/config.php');
     if ( isset($_GET['lang']) ) {
         $_SESSION['lang'] = $_GET['lang'];
     }
     else if ( !isset($_GET['lang']) and !isset($_SESSION['lang']) ){
         $_SESSION['lang'] = "ar";    
     }
+    $propertyManager = new PropertyManager($pdo);
+    $properties = $propertyManager->getPropertyForSale();
     //language settings
     $pageTitle = "";
     $title = "";
+    $moreButton = "";
     $all = "";
     $apartment = "";
     $house = "";
     $office = "";
     $land = "";
-    $store = ""; 
+    $store = "";
+    //property settings
+    $propertyName = "";
+    $category = "";
+    $phone = "";
     if ( $_SESSION['lang'] == "ar" ) {
         $pageTitle = "شراء";
         $title = "للبيع";  
@@ -24,6 +43,9 @@
         $office = "مكاتب";
         $land = "أراضي";
         $store = "محلات تجارية"; 
+        $propertyName = "nameAR";
+        $phone = "الهاتف";
+        $moreButton = "المزيد";
     }
     else if ( $_SESSION['lang'] == "fr" ) {
         $pageTitle = "Acheter";
@@ -34,7 +56,9 @@
         $office = "Bureau";
         $land = "Terrain";
         $store = "Local commercial"; 
-        
+        $propertyName = "nameFR";
+        $phone = "Téléphone";
+        $moreButton = "Voir";
     }
     else if ( $_SESSION['lang'] == "de" ) {
         $pageTitle = "Kaufen";
@@ -45,6 +69,9 @@
         $office = "Büro";
         $land = "Bauland";
         $store = "Geschäfte"; 
+        $propertyName = "nameDE";
+        $phone = "Telefon";
+        $moreButton = "Mehr";
     }
     else if ( $_SESSION['lang'] == "es" ) {
         $pageTitle = "Comprar";
@@ -55,6 +82,9 @@
         $office = "Oficina";
         $land = "Terreno";
         $store = "Tienda";
+        $propertyName = "nameES";
+        $phone = "Teléfono";
+        $moreButton = "Ver Más";
     }
     else if ( $_SESSION['lang'] == "nl" ) {
         $pageTitle = "Kopen";
@@ -65,6 +95,9 @@
         $office = "Office";
         $land = "Bouwgrond";
         $store = "Shops";
+        $propertyName = "nameNL";
+        $phone = "Telefoon";
+        $moreButton = "Meer";
     }
 ?>
 <!DOCTYPE html>
@@ -117,37 +150,28 @@
                         </div>
                         <div class="row">
                             <ul class="products" id="able-list">
-                                <li style="display: block;" class="span4 first house">
+                                <?php
+                                foreach( $properties as $property ) {
+                                ?>
+                                <li class="span4 <?= $property->category() ?>">
                                   <div class="product-item">
                                     <div class="imagewrapper">
-                                      <img alt="" width="300" height="180" src="img/imgdemo/300x180.gif">
-                                      <span class="price"> $358.000</span>
+                                      <img alt="" width="300" height="180" src="<?= $property->img4() ?>">
+                                      <span class="price"><a class="more-button" href="buy-property.php?sslapi=<?= uniqid().date('sihdmY') ?>&baohyu=<?= $property->id() ?>&nuwapk=<?= date('ihsdmY') ?>"><?= $moreButton ?></a></span>
                                     </div>
-                                    <h3><a href="property_detail.html" title=""> 1076 Nelson Walk </a></h3>
+                                    <h3><a href="buy-property.php?sslapi=<?= uniqid().date('sihdmY') ?>&baohyu=<?= $property->id() ?>&nuwapk=<?= date('ihsdmY') ?>" title=""><?= $property->$propertyName() ?></a></h3>
                                     <ul class="title-info">
                                       <li>Bathrooms <span> 1</span> </li>
-                                      <li>Bathrooms <span> 1</span></li>
+                                      <li><?= $phone ?> <span> <?= $property->phone() ?></span></li>
                                       <li>Square Footage <span>3200 sqft</span></li>
                                       <li>Type: <span>Residential</span></li>
                                     </ul>
                                   </div>
                                 </li>
-                                <li class="span4 land">
-                                  <div class="product-item">
-                                    <div class="imagewrapper">
-                                      <img alt="" width="300" height="180" src="img/imgdemo/300x180.gif">
-                                      <span class="price"> $358.000</span>
-                                    </div>
-                                    <h3><a href="property_detail.html" title=""> 4101 Gulf Shore </a></h3>
-                                    <ul class="title-info">
-                                      <li>Bathrooms <span> 1</span> </li>
-                                      <li>Bathrooms <span> 1</span></li>
-                                      <li>Square Footage <span>3200 sqft</span></li>
-                                      <li>Type: <span>Residential</span></li>
-                                    </ul>
-                                  </div>
-                                </li>
-                                <li class="span4 product last house offices apartment">
+                                <?php
+                                }
+                                ?>
+                                <!--li class="span4 product last house offices apartment">
                                   <div class="product-item">
                                     <div class="imagewrapper">
                                       <img alt="" width="300" height="180" src="img/imgdemo/300x180.gif">
@@ -206,7 +230,7 @@
                                       <li>Type: <span>Residential</span></li>
                                     </ul>
                                   </div>
-                                </li>
+                                </li-->
                             </ul>
                         </div>
                         <!-- Page-ination -->

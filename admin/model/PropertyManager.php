@@ -12,9 +12,10 @@ class PropertyManager{
 	//BAISC CRUD OPERATIONS
 	public function add(Property $property){
     	$query = $this->_db->prepare(' INSERT INTO t_property (
-		nameAR, nameFR, nameES, nameDE, nameNL, descriptionAR, descriptionFR, descriptionES, descriptionDE, descriptionNL, price, address, phone, type, img1, img2, img3, img4, created, createdBy)
-		VALUES (:nameAR, :nameFR, :nameES, :nameDE, :nameNL, :descriptionAR, :descriptionFR, :descriptionES, :descriptionDE, :descriptionNL, :price, :address, :phone, :type, :img1, :img2, :img3, :img4, :created, :createdBy)')
+		category, nameAR, nameFR, nameES, nameDE, nameNL, descriptionAR, descriptionFR, descriptionES, descriptionDE, descriptionNL, price, address, latlong, phone, type, img1, img2, img3, img4, created, createdBy)
+		VALUES (:category, :nameAR, :nameFR, :nameES, :nameDE, :nameNL, :descriptionAR, :descriptionFR, :descriptionES, :descriptionDE, :descriptionNL, :price, :address, :latlong; :phone, :type, :img1, :img2, :img3, :img4, :created, :createdBy)')
 		or die (print_r($this->_db->errorInfo()));
+		$query->bindValue(':category', $property->category());
 		$query->bindValue(':nameAR', $property->nameAR());
 		$query->bindValue(':nameFR', $property->nameFR());
 		$query->bindValue(':nameES', $property->nameES());
@@ -27,6 +28,7 @@ class PropertyManager{
 		$query->bindValue(':descriptionNL', $property->descriptionNL());
 		$query->bindValue(':price', $property->price());
 		$query->bindValue(':address', $property->address());
+        $query->bindValue(':latlong', $property->latlong());
 		$query->bindValue(':phone', $property->phone());
 		$query->bindValue(':type', $property->type());
 		$query->bindValue(':img1', $property->img1());
@@ -99,6 +101,28 @@ class PropertyManager{
 		$query->closeCursor();
 		return $propertys;
 	}
+    
+    //IF type RECORD is set to 1 it means the property is on sale
+    public function getPropertyForSale(){
+        $propertys = array();
+        $query = $this->_db->query('SELECT * FROM t_property WHERE type=1 ORDER BY id DESC');
+        while($data = $query->fetch(PDO::FETCH_ASSOC)){
+            $propertys[] = new Property($data);
+        }
+        $query->closeCursor();
+        return $propertys;
+    }
+    
+    //IF type RECORD is set to 2 it means the property is for rent
+    public function getPropertyForRent(){
+        $propertys = array();
+        $query = $this->_db->query('SELECT * FROM t_property WHERE type=2 ORDER BY id DESC');
+        while($data = $query->fetch(PDO::FETCH_ASSOC)){
+            $propertys[] = new Property($data);
+        }
+        $query->closeCursor();
+        return $propertys;
+    }
 
 	public function getPropertysByLimits($begin, $end){
 		$propertys = array();
